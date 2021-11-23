@@ -22,7 +22,7 @@
 
 <script>
     let peer = new Peer()
-
+    console.log('123')
     peer.on('open', function (peerID) {
         document.querySelector('#myID').innerHTML += ' ' + peerID
     })
