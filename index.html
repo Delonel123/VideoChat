@@ -37,6 +37,7 @@
     function callanswer() {
         console.log(peerCall.answer)
         navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(function (mediaStream) {
+            console.log(mediaStream)
             var video = document.getElementById('myVideo');
             peercall.answer(mediaStream); // отвечаем на звонок и передаем свой медиапоток собеседнику
             console.log('peercall = ' + peerCall)
