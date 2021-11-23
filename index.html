@@ -30,6 +30,8 @@
     let peerCall
     peer.on('call', function (call) {
         peerCall = call
+        console.log('call = ' + call)
+        console.log('peercall = ' + peerCall)
         document.querySelector('#callInfo').innerHTML = "Входящий звонок <button onclick='callanswer()' >Принять</button><button onclick='callcancel()' >Отклонить</button>";
     })
     function callanswer() {
