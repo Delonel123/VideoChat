@@ -56,7 +56,7 @@
 
 
     function callToNode(peerId) { //вызов
-        navigator.mediaDevices.getUserMedia({ audio: true, video: true }).then(function (mediaStream) {
+        navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(function (mediaStream) {
             console.log(navigator.mediaDevices)
             var video = document.getElementById('myVideo');
             peercall = peer.call(peerId, mediaStream); //звоним, указав peerId-партнера и передав свой mediaStream
