@@ -35,6 +35,7 @@
         document.querySelector('#callInfo').innerHTML = "Входящий звонок <button onclick='callanswer()' >Принять</button><button onclick='callcancel()' >Отклонить</button>";
     })
     function callanswer() {
+        console.log(peerCall.answer)
         navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(function (mediaStream) {
             var video = document.getElementById('myVideo');
             peercall.answer(mediaStream); // отвечаем на звонок и передаем свой медиапоток собеседнику
