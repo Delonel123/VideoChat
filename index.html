@@ -11,8 +11,8 @@
 
 <body>
     <p id="myID">Мой ID:</p>
-    <input type="text" placeholder="ID партнера...">
-    <button onclick="callToNode(document.getElementById('otherPeerId').value)">Позвонить</button>
+    <input id="OtherID" type="text" placeholder="ID партнера...">
+    <button onclick="callToNode(document.getElementById('OtherID').value)">Позвонить</button>
     <div id="callInfo">Информация о звонке</div>
 
     <video id="MyVide" width="400px" height="400px"></video>
