@@ -14,15 +14,7 @@
 	<div id=callinfo ></div>
 	<video id=remVideo width="400px" height="auto" ></video>
 <script>
-var callOptions={'iceServers': [
-		{url: 'stun:95.xxx.xx.x9:3479',		
-		username: "user",
-		credential: "xxxxxxxxxx"},
-		{ url: "turn:95.xxx.xx.x9:3478",		
-		username: "user",
-		credential: "xxxxxxxx"}]
-	}; 
-peer= new Peer({config: callOptions}); 
+peer= new Peer(); 
 peer.on('open', function(peerID) {
 			document.getElementById('myid').innerHTML=peerID;			
 		});
