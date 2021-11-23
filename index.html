@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
+    <title>ВидеоЗвонок</title>
+</head>
+
+<body>
+    <p id="myID">Мой ID:</p>
+    <input type="text" placeholder="ID партнера...">
+    <button onclick="callToNode(document.getElementById('otherPeerId').value)">Позвонить</button>
+    <div id="callInfo">Информация о звонке</div>
+
+    <video id="MyVide" width="400px" height="400px"></video>
+    <video id="OtherVide" width="400px" height="400px"></video>
+</body>
+
+
+<script>
+    let peer = new Peer()
+
+    peer.on('open', function (peerID) {
+        document.querySelector('#myID').innerHTML += ' ' + peerID
+    })
+
+    let peerCall
+    peer.on('call', function (call) {
+        peerCall = call
+        document.querySelector('.callInfo').innerHTML = "Входящий звонок <button onclick='callanswer()' >Принять</button><button onclick='callcancel()' >Отклонить</button>";
+    })
+
+    function callToNode(peerId) { //вызов
+        navigator.mediaDevices.getUserMedia({ audio: true, video: true }).then(function (mediaStream) {
+            var video = document.getElementById('myVideo');
+            peercall = peer.call(peerId, mediaStream); //звоним, указав peerId-партнера и передав свой mediaStream
+            peercall.on('stream', function (stream) { //нам ответили, получим стрим
+                setTimeout(function () {
+                    document.getElementById('remVideo').srcObject = peercall.remoteStream;
+                    document.getElementById('remVideo').onloadedmetadata = function (e) {
+                        document.getElementById('remVideo').play();
+                    };
+                }, 1500);
+            });
+            //  peercall.on('close', onCallClose);				  
+            video.srcObject = mediaStream;
+            video.onloadedmetadata = function (e) {
+                video.play();
+            };
+        }).catch(function (err) { console.log(err.name + ": " + err.message); });
+    }
+</script>
+
+</html>
