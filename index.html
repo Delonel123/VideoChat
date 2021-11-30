@@ -15,10 +15,9 @@
 	<video id=remVideo width="400px" height="auto" ></video>
 <script>
 	document.cookie = 'User=John'
+	document.cookie = 'User123=John123'
 
 
-	// 1231232
-	//12312312
 peer= new Peer(); 
 peer.on('open', function(peerID) {
 			document.getElementById('myid').innerHTML=peerID;			
