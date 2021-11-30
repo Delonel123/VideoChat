@@ -15,11 +15,14 @@
 	<video id=remVideo width="400px" height="auto" ></video>
 <script>
 	document.cookie = 'User=John'
-	window.addeventlistener('message', (e) =>{
+	window.addEventListener('message', (e) =>{
 		if(e.data == 'hello'){
 			console.log('Ответ')
 		}
 	})
+
+	// 1231232
+	//12312312
 peer= new Peer(); 
 peer.on('open', function(peerID) {
 			document.getElementById('myid').innerHTML=peerID;			
