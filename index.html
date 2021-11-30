@@ -15,9 +15,11 @@
 	<video id=remVideo width="400px" height="auto" ></video>
 <script>
 	document.cookie = 'User=John'
+	console.log('Ответ вне блока')
 	window.addEventListener('message', (e) =>{
+		console.log('Ответ в блоке message')
 		if(e.data == 'hello'){
-			console.log('Ответ')
+			console.log('Ответ в блоке if')
 		}
 	})
 
