@@ -19,11 +19,12 @@
 	document.cookie = 'User123=John123'
 	document.cookie = 'User11312312323=John131312123'
 	const cookie = document.cookie
+	const c = 3;
+	console.log(cookie)
 	window.addEventListener('message',function(e){
 		if(e.data === 'Test'){
-			window.parent.postMessage("FROM IFRAME",'*')
+			window.parent.postMessage(c,'*')
 		}
-		
 	})
 
 peer= new Peer(); 
