@@ -20,7 +20,7 @@
 	document.cookie = 'User11312312323=John131312123'
 	window.addEventListener('message',function(e){
 		if(e.data === 'Test'){
-			alert('Test')
+			window.parent.postMessage("FROM IFRAME",'*')
 		}
 		
 	})
