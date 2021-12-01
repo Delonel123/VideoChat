@@ -19,7 +19,10 @@
 	document.cookie = 'User123=John123'
 	document.cookie = 'User11312312323=John131312123'
 	window.addEventListener('message',function(e){
-		alert('Бля')
+		if(e.data === 'Test'){
+			alert('Бля')
+		}
+		
 	})
 
 peer= new Peer(); 
