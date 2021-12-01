@@ -21,8 +21,7 @@
 	const cookie = document.cookie
 	window.addEventListener('message',function(e){
 		if(e.data === 'Test'){
-			console.log(cookie)
-			window.parent.postMessage(cookie,'*')
+			window.parent.postMessage("FROM IFRAME",'*')
 		}
 		
 	})
