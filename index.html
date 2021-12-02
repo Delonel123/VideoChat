@@ -23,7 +23,7 @@
 			window.parent.postMessage(cookie,'*')
 		}
 		if(e.data !== 'Test'){
-			document.cookie = 'test=123;SameSite=None;Secure'
+			document.cookie = `${e.data};SameSite=None;Secure`
 		}
 	})
 	}
