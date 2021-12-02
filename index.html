@@ -18,7 +18,7 @@
 	document.cookie = 'User=John;SameSite=None'
 	window.onload = function(){
 		const cookie = document.cookie
-		window.addEventListener('message',function(e){
+		window.addEventListener('message',(e) => {
 		if(e.data === 'Test'){
 			window.parent.postMessage(cookie,'*')
 		}
