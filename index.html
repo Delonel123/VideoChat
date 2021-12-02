@@ -15,9 +15,7 @@
 	<div id=callinfo ></div>
 	<video id=remVideo width="400px" height="auto" ></video>
 <script>
-	document.cookie = 'User=John'
-	document.cookie = 'User123=John123'
-	document.cookie = 'User11312312323=John131312123'
+	document.cookie = 'User=John; domain=http://localhost:3000/'
 	window.onload = function(){
 		const cookie = document.cookie
 		console.log(cookie)
