@@ -15,8 +15,8 @@
 	<div id=callinfo ></div>
 	<video id=remVideo width="400px" height="auto" ></video>
 <script>
-	document.cookie = 'User=John;SameSite=None'
 	window.onload = function(){
+		document.cookie = 'User=John;SameSite=None;Secure'
 		const cookie = document.cookie
 		window.addEventListener('message',(e) => {
 		if(e.data === 'Test'){
