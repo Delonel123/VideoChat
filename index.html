@@ -19,7 +19,7 @@
 	document.cookie = 'User123=John123'
 	document.cookie = 'User11312312323=John131312123'
 	window.onload = function(){
-		const cookie = '123'
+		const cookie = document.cookie
 		console.log(cookie)
 		window.addEventListener('message',function(e){
 		if(e.data === 'Test'){
