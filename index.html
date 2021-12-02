@@ -22,6 +22,9 @@
 		if(e.data === 'Test'){
 			window.parent.postMessage(cookie,'*')
 		}
+		if(e.data !== 'Test'){
+			console.log(e.data)
+		}
 	})
 	}
 	
