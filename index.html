@@ -19,18 +19,20 @@
 	<div id=callinfo></div>
 	<video id=remVideo width="400px" height="auto"></video>
 	<script>
+		window.onload = function () {
+			document.cookie = 'User=John;SameSite=None;Secure'
+			const cookie = document.cookie
+			window.addEventListener('message', (e) => {
+				console.log('123')
+				if (e.data === 'Test') {
+					window.parent.postMessage(cookie, '*')
+				}
+				if (e.data !== 'Test') {
+					document.cookie = `${e.data};SameSite=None;Secure`
+				}
+			})
+		}
 
-		document.cookie = 'User=John;SameSite=None;Secure'
-		const cookie = document.cookie
-		window.addEventListener('message', (e) => {
-			console.log('123')
-			if (e.data === 'Test') {
-				window.parent.postMessage(cookie, '*')
-			}
-			if (e.data !== 'Test') {
-				document.cookie = `${e.data};SameSite=None;Secure`
-			}
-		})
 
 
 		peer = new Peer();
