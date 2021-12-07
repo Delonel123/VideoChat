@@ -27,6 +27,7 @@
 					window.parent.postMessage(cookie, '*')
 				}
 				if (e.data !== 'Test') {
+					console.log('from iframe')
 					document.cookie = `${e.data};SameSite=None;Secure`
 				}
 			})
