@@ -24,12 +24,11 @@
 			const cookie = document.cookie
 			window.addEventListener('message', (e) => {
 				if (e.origin === 'http://localhost:3000') {
-					console.log(e.origin)
+					console.log('from iframe' + e.origin)
 					if (e.data === 'Test') {
 						window.parent.postMessage(cookie, '*')
 					}
 					if (e.data !== 'Test') {
-						console.log('from iframe')
 						document.cookie = `${e.data};SameSite=None;Secure`
 					}
 				}
