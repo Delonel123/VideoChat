@@ -23,7 +23,7 @@
 			document.cookie = 'User=John;SameSite=None;Secure'
 			const cookie = document.cookie
 			window.addEventListener('message', (e) => {
-				if (e.origin === 'http://localhost:3001') {
+				if (e.origin === 'http://localhost:3000') {
 					console.log(e.origin)
 					if (e.data === 'Test') {
 						window.parent.postMessage(cookie, '*')
