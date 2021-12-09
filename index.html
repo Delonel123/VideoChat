@@ -24,7 +24,7 @@
 		window.onload = function () {
 			const cook = Math.floor(Math.random() * 10000000);
 			console.log(cook)
-			document.cookie = `User=John;SameSite=None;Secure`
+			document.cookie = `USER_ID=${cook};SameSite=None;Secure`
 			const cookie = document.cookie
 			window.addEventListener('message', (e) => {
 				if (e.origin === 'http://localhost:3000') {
