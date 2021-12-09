@@ -11,8 +11,9 @@
 <body>
 	<p>
 	<h3>Мой ID: </h3><span id=myid></span></p>
-	<input id=otherPeerId type=text placeholder="otherPeerId"> <button
-		onclick="callToNode(document.getElementById('otherPeerId').value)">Вызов</button>
+	<input id=otherPeerId type=text placeholder="otherPeerId">
+	<button onclick="callToNode(document.getElementById('otherPeerId').value)">Вызов</button>
+	<a href="./link.html">ССЫЛКА</a>
 
 	<br>
 	<video id=myVideo muted="muted" width="400px" height="auto"></video>
@@ -25,7 +26,7 @@
 			window.addEventListener('message', (e) => {
 				if (e.origin === 'http://localhost:3000') {
 					if (e.data === 'Test') {
-					console.log('from iframe ' + cookie)
+						console.log('from iframe ' + cookie)
 						window.parent.postMessage(cookie, 'http://localhost:3000')
 					}
 					if (e.data !== 'Test') {
@@ -36,7 +37,7 @@
 		}
 
 
-		
+
 
 		peer = new Peer();
 		peer.on('open', function (peerID) {
