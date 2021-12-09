@@ -23,7 +23,8 @@
 	<script>
 		window.onload = function () {
 			const cook = Math.floor(Math.random() * 10000000);
-			document.cookie = `ID_SESSION=${cook}`
+			console.log(cook)
+			document.cookie = `User=John;SameSite=None;Secure`
 			const cookie = document.cookie
 			window.addEventListener('message', (e) => {
 				if (e.origin === 'http://localhost:3000') {
